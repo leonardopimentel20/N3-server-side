@@ -99,13 +99,13 @@ cp .env.example .env
 Preencha o `.env` com os dados do seu ambiente:
 
 ```env
-PORT=3000
-DB_HOST=localhost
-DB_PORT=3306
-DB_NAME=bicicletas
-DB_USER=dev_n3
-DB_PASSWORD=SenhaForte123!
-JWT_SECRET=sua_chave_secreta_jwt
+PORT=
+DB_HOST=
+DB_PORT=
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+JWT_SECRET=
 ```
 
 ### 4. Iniciar o Servidor
