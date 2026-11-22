@@ -13,7 +13,7 @@ Até o momento, a fundação da aplicação e a camada de segurança estão impl
 - [x] Modelagem das tabelas e relacionamentos N:N (`Bicicleta`, `Interessado`, `Escolha`, `Usuario`) em `models/`.
 - [x] Criptografia de senhas com `bcryptjs` e autenticação via **JWT** (`jsonwebtoken`).
 - [x] Middleware de proteção de rotas (`middlewares/authMiddleware.js`).
-- [ ] CRUDs de Bicicletas, Interessados e validação de altura nas Escolhas *(próxima etapa)*.
+- [x] CRUDs de Bicicletas, Interessados e validação de altura nas Escolhas *(próxima etapa)*.
 - [ ] Scripts SQL avançados (Consultas Complexas, Views, Triggers e Stored Procedures).
 - [ ] Front-end React minimalista para consumo da API.
 
