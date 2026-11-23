@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulta - Bicicletário N3</title>
+  <style>
+    /* Estilo mínimo embutido para não precisarmos criar um arquivo CSS separado */
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: #121212;
+      color: #e5e5e5;
+    }
+    h1, h2 { color: #ffffff; }
+    section {
+      background: #1e1e1e;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      border: 1px solid #333;
+    }
+    .controles {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    select, button {
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid #444;
+      background: #2a2a2a;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover { background: #3a3a3a; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.5rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.6rem;
+      border-bottom: 1px solid #333;
+    }
+    th { color: #a3a3a3; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>Painel de Consulta — Bicicletário</h1>
+
+  <!-- SEÇÃO 1: Consulta de Bicicletas com filtro dinâmico -->
+  <section>
+    <h2>Bicicletas Cadastradas</h2>
+    <div class="controles">
+      <label for="filtro-quadro">Filtrar por quadro:</label>
+      <!-- O "id" permite que o JavaScript leia qual opção o usuário escolheu -->
+      <select id="filtro-quadro">
+        <option value="">Todos os quadros</option>
+        <option value="14">Quadro 14</option>
+        <option value="16">Quadro 16</option>
+        <option value="17">Quadro 17</option>
+      </select>
+      <button id="btn-atualizar">Atualizar Tudo</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Quadro</th>
+          <th>Cor</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <!-- O <tbody> começa vazio: o JavaScript vai injetar as linhas <tr> aqui -->
+      <tbody id="tabela-bicicletas"></tbody>
+    </table>
+  </section>
+
+  <!-- SEÇÃO 2: Consulta de Interessados -->
+  <section>
+    <h2>Interessados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Altura</th>
+          <th>Quadro Recomendado</th>
+          <th>Telefone</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-interessados"></tbody>
+    </table>
+  </section>
+
+  <!-- SEÇÃO 3: Consulta de Escolhas (cruzamento Interessado x Bicicleta) -->
+  <section>
+    <h2>Escolhas Registradas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID Escolha</th>
+          <th>Interessado</th>
+          <th>Altura</th>
+          <th>Bicicleta (Cor / Quadro)</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-escolhas"></tbody>
+    </table>
+  </section>
+
+  <!-- Carregamos o script no final do <body> para garantir que todos os elementos
+       HTML (tabelas, botões, selects) já existam na tela antes do JS buscá-los -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -15,10 +15,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static("public")); 
 
-app.get("/", (req, res) => {
-  res.json({ message: "Servidor rodando com sucesso!" });
-});
 
 app.use("/auth", authRouter);
 app.use("/interessados", interessadoRouter);
